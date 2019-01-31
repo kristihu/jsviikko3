@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class marker{
+    constructor(ink, capOn, capOff){
+      this._ink = ink;
+      this._capOn = capOn;
+      this._capOff = capOff;
+    }
+
+
+    addInk(){
+      this._ink = this._ink + 3;
+      console.log("mustetta uniitteina:"+this._ink)
+    }
+
+    draw(){
+        if (this._ink > 0 && this._capOff > 0){
+      console.log("piirretään!!!");
+          this._ink = this._ink -1;
+          console.log("uusimusteenmärä"+this._ink);
+        }
+        else{
+          console.log("ne piirtää kel on liitua!")
+        }
+    }
+    poista(){
+      this._capOn = 0;
+      this._capOff = 1;
+      console.log("korkki pois")
+    }
+    korkkiKii(){
+      this._capOff = 0;
+      this._capOn = 1;
+      console.log("korkki kiinni!!")
+    }
+  }
+
+  const marker1 = new marker(0, 0, 0);
+  console.log(marker1);
+
+  marker1.addInk();
+  marker1.poista();
+  marker1.draw();
+  console.log(marker1);
+  marker1.draw();
+  marker1.korkkiKii();
+  marker1.draw();
+  marker1.poista();
+  marker1.draw();
+  console.log(marker1);
+  marker1.draw();
+  marker1.draw();
+
+</script>
+</body>
+</html>
